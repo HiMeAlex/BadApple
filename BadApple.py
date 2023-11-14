@@ -5,7 +5,7 @@ def img2ascii(path):
     scale = 1/3
     init_image = img.open(path).convert('L')
     image = init_image.resize((round(init_image.size[0] * (scale)), round(init_image.size[1] * (scale))))
-    char_list = [i for i in "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1[]?-_+~<>i!lI;:,\\^`'. "]
+    char_list = [i for i in "@%#*+=-:. "]
     x,y = image.size
     print()
     
