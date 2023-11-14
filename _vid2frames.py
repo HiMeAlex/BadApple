@@ -1,6 +1,4 @@
-import cv2
-import os
-import shutil
+import cv2, os, shutil
 from pathlib import Path
 # Read the video from specified path
 def _vid2frames(video):
