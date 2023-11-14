@@ -1,3 +1,9 @@
-Videos/*
+!/videos/
+/videos/*
+!/videos/BadApple.mp4
+!/data/
+/data/*
 .vscode/
 __pycache__/
+BadApple.py
+BA_ColorTesting.py
