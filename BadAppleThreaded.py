@@ -1,7 +1,5 @@
-import threading
+import threading, numpy, os
 from time import sleep
-import numpy
-import os
 from PIL import Image as img
 from pathlib import Path
 frame_list = []
