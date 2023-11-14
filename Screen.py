@@ -36,5 +36,5 @@ def main(char_str:str='@%#*+=-:. '):
 
     t1.join()
     t2.join()
-
-main()
+if __name__ == '__main__':
+    main()
