@@ -6,3 +6,4 @@ How to run BadAppleThreaded.py and BadApple.py:
 
 ## Depencies
 opencv-python, mss, pillow
+(these are all the names of the PyPi packages you need to pip install)
