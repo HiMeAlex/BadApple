@@ -6,13 +6,13 @@ def _vid2frames(video):
     
     try:
         # creating a folder named data
-        if os.path.exists('data'):
-            shutil.rmtree('data')
-        if not os.path.exists('data'):
-            os.makedirs('data')
+        if os.path.exists("..\\data"):
+            shutil.rmtree("..\\data")
+        if not os.path.exists("..\\data"):
+            os.makedirs("..\\data")
     except OSError:
         # if not created then raise error
-        print ('Error: Creating directory of data')
+        print ("Error: Creating directory of data")
 
     currentframe = 0
     
@@ -22,10 +22,10 @@ def _vid2frames(video):
         ret,frame = cam.read()
     
         if ret:
-            lead_curframe = f'{currentframe:04}'
+            lead_curframe = f"{currentframe:04}"
             # if video is still left continue creating images
-            name = './data/frame' + str(lead_curframe) + '.jpg'
-            print ('Creating...' + name)
+            name = ".\\data\\frame" + str(lead_curframe) + ".jpg"
+            print ("Creating..." + name)
     
             # writing the extracted images
             cv2.imwrite(name, frame)
@@ -40,15 +40,17 @@ def _vid2frames(video):
     cam.release()
     cv2.destroyAllWindows()
 
-if __name__ == '__main__':
-    vid_list = os.listdir(f'{Path(__file__).parent.absolute()}/Videos')
+if __name__ == "__main__":
+    project_dir = Path(__file__).parent.parent.resolve()
+    vid_list = os.listdir(f"{project_dir}\\videos")
+    vid_list.remove("input_videos_go_here.txt")
 
     while True:
-        inp = input(f'please input which video you would like(1-{len(vid_list)}): ')
+        inp = input(f"please input which video you would like(1-{len(vid_list)}): ")
 
         if inp.isnumeric() and 1 <= int(inp) <= len(vid_list):
             num = int(inp)
-            _vid2frames(f'{Path(__file__).parent.absolute()}/Videos/{vid_list[num-1]}')
+            _vid2frames(f"{project_dir}\\videos\\{vid_list[num-1]}")
             break
         else:
-            print('input is either not a number or is not within range.')
+            print("input is either not a number or is not within range.")

@@ -5,9 +5,9 @@ from PIL import Image as img
 from pathlib import Path
 frame_list = []
 
-def create_frames(char_list:list = [i for i in'@%#*+=-:. ']):
+def create_frames(char_list:list = [i for i in"@%#*+=-:. "]):
     global frame_list
-    bounding_box = {'top': 0, 'left': 0, 'width': 1920, 'height': 1080}
+    bounding_box = {"top": 0, "left": 0, "width": 1920, "height": 1080}
     char_list = [i for i in " .:-=+*#%@"]
     sct = mss()
     
@@ -26,7 +26,7 @@ def print_frames():
         sleep(.1)
         print(i)
 
-def main(char_str:str='@%#*+=-:. '):
+def main(char_str:str="@%#*+=-:. "):
     char_str = [i for i in char_str][::-1]
     t1 = threading.Thread(target=create_frames, args=())
     t2 = threading.Thread(target=print_frames, args=())
@@ -36,5 +36,5 @@ def main(char_str:str='@%#*+=-:. '):
 
     t1.join()
     t2.join()
-if __name__ == '__main__':
-    main()
+
+main()
