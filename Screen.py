@@ -1,7 +1,5 @@
-import numpy
-import cv2, os
+import numpy, cv2, os,threading
 from mss import mss
-import threading
 from time import sleep
 from PIL import Image as img
 from pathlib import Path
