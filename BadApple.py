@@ -1,4 +1,4 @@
-import math, numpy, os, cProfile, pstats, ctypes, pathlib
+import math, numpy, os, pathlib
 from PIL import Image as img
 
 def img2ascii(path):
@@ -34,10 +34,4 @@ def main():
         img2ascii_filled(i)    
 
 if __name__ == '__main__':
-    with cProfile.Profile() as pr:
-        main()
-    
-        stats = pstats.Stats(pr)
-    stats.sort_stats(pstats.SortKey.TIME)
-    stats.print_stats()
-    exit()
+    main()
