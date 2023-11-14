@@ -1,6 +1,4 @@
-
-import numpy
-import cv2, os
+import numpy, cv2, os
 
 cap = cv2.VideoCapture(0)
 while(True):
